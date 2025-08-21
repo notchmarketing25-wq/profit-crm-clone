@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice CRM - المخزون</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard active">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="dashboard-logo">
+                    <div class="vice-logo">
+                        Vice
+                        <span class="crm-badge">CRM</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                    <a href="marketing.html" class="nav-item dropdown">التسويق</a>
+                    <a href="sales.html" class="nav-item dropdown">المبيعات</a>
+                    <a href="inventory.html" class="nav-item dropdown active">المخزون</a>
+                    <a href="client.html" class="nav-item">العملاء</a>
+                    <a href="reports.html" class="nav-item dropdown">التقارير</a>
+                    <a href="network.html" class="nav-item dropdown">الشبكة</a>
+                    <a href="#" class="nav-item dropdown">المرشحات</a>
+                </nav>
+                
+                <div class="user-section">
+                    <div class="user-actions">
+                        <button class="action-btn" title="البحث">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="الإشعارات">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-btn" title="الرسائل">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        <button class="action-btn" title="المهام">
+                            <i class="fas fa-tasks"></i>
+                        </button>
+                        <button class="action-btn" title="التحميل">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <span>مرحباً، محمود</span>
+                        <div class="user-avatar">م</div>
+                        <button class="action-btn" title="الإعدادات">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-chart-line"></i>
+                            لوحة التحكم
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketing.html">
+                            <i class="fas fa-bullhorn"></i>
+                            التسويق
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="fas fa-handshake"></i>
+                            المبيعات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inventory.html" class="active">
+                            <i class="fas fa-boxes"></i>
+                            المخزون
+                        </a>
+                    </li>
+                    <li>
+                        <a href="client.html">
+                            <i class="fas fa-users"></i>
+                            العملاء
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-file-alt"></i>
+                            التقارير
+                        </a>
+                    </li>
+                    <li>
+                        <a href="network.html">
+                            <i class="fas fa-network-wired"></i>
+                            الشبكة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="filters.html">
+                            <i class="fas fa-filter"></i>
+                            المرشحات
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="dashboard.html">المبيعات</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="inventory.html">المخزون</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>المخزون</span>
+                    </div>
+                    <h1 class="page-title">المخزون</h1>
+                </div>
+
+                <!-- Inventory Navigation -->
+                <div class="inventory-nav-section" style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <div class="inventory-nav-menu" style="display: flex; flex-wrap: wrap; gap: 15px;">
+                        <a href="#" class="nav-link active-nav" style="padding: 12px 24px; background: #667eea; color: white; border-radius: 8px; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fas fa-upload"></i>
+                            رفع مخزون
+                        </a>
+                        <a href="#" class="nav-link" style="padding: 12px 24px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-building"></i>
+                            المشروع الأساسي
+                        </a>
+                        <a href="#" class="nav-link" style="padding: 12px 24px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-redo"></i>
+                            إعادة بيع الوحدة
+                        </a>
+                        <a href="#" class="nav-link" style="padding: 12px 24px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-home"></i>
+                            سجلات المخزون
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inventory Cards Grid -->
+                <div class="inventory-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <!-- Upload Inventory Card -->
+                    <div class="inventory-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s ease; cursor: pointer;" onclick="showUploadModal()">
+                        <div class="inventory-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 15px;">رفع مخزون</h3>
+                        <p style="color: #6c757d; margin-bottom: 20px;">قم برفع ملف المخزون الخاص بك لإضافة الوحدات العقارية الجديدة</p>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-upload"></i>
+                            اختر ملف
+                        </button>
+                    </div>
+
+                    <!-- Primary Project Card -->
+                    <div class="inventory-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s ease; cursor: pointer;" onclick="showProjectDetails()">
+                        <div class="inventory-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 15px;">المشروع الأساسي</h3>
+                        <p style="color: #6c757d; margin-bottom: 20px;">إدارة وعرض تفاصيل المشروع الأساسي والوحدات المتاحة</p>
+                        <div class="project-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #667eea;">150</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">إجمالي الوحدات</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #28a745;">85</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">متاحة</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #dc3545;">65</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">مباعة</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" style="width: 100%;">
+                            <i class="fas fa-eye"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+
+                    <!-- Resale Unit Card -->
+                    <div class="inventory-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s ease; cursor: pointer;" onclick="showResaleUnits()">
+                        <div class="inventory-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 15px;">إعادة بيع الوحدة</h3>
+                        <p style="color: #6c757d; margin-bottom: 20px;">إدارة الوحدات المعروضة لإعادة البيع والوحدات المسترجعة</p>
+                        <div class="resale-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #ffc107;">12</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">للإعادة</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #17a2b8;">8</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">قيد المعالجة</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning" style="width: 100%;">
+                            <i class="fas fa-list"></i>
+                            عرض الوحدات
+                        </button>
+                    </div>
+
+                    <!-- Inventory Logs Card -->
+                    <div class="inventory-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s ease; cursor: pointer;" onclick="showInventoryLogs()">
+                        <div class="inventory-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 15px;">سجلات المخزون</h3>
+                        <p style="color: #6c757d; margin-bottom: 20px;">عرض سجل جميع العمليات والتغييرات على المخزون</p>
+                        <div class="logs-info" style="margin-bottom: 20px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #6f42c1;">آخر تحديث</div>
+                            <div style="font-size: 0.9rem; color: #6c757d;">19-أغسطس-2025 11:15:16</div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <i class="fas fa-history"></i>
+                            عرض السجلات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="recent-activity-section" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 25px;">
+                        <i class="fas fa-clock"></i>
+                        النشاط الأخير
+                    </h3>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item" style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0; transition: background 0.3s ease;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-upload" style="color: #1976d2;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تم رفع مخزون جديد</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">تم إضافة 25 وحدة جديدة إلى المشروع الأساسي</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">منذ ساعتين</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item" style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0; transition: background 0.3s ease;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #f3e5f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-home" style="color: #7b1fa2;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تم بيع وحدة سكنية</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">الوحدة رقم A-205 - شقة 3 غرف</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">منذ 4 ساعات</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item" style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0; transition: background 0.3s ease;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #fff3cd; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-redo" style="color: #856404;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">طلب إعادة بيع</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">الوحدة رقم B-102 - مكتب تجاري</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">أمس</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item" style="display: flex; align-items: center; padding: 15px; transition: background 0.3s ease;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #d4edda; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-check" style="color: #155724;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تم تحديث أسعار المخزون</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">تحديث أسعار 15 وحدة في المشروع الأساسي</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">منذ يومين</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="vice-logo">
+                    Vice
+                    <span class="crm-badge">CRM</span>
+                </div>
+                <button class="close-sidebar" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a></li>
+                <li><a href="marketing.html"><i class="fas fa-bullhorn"></i> التسويق</a></li>
+                <li><a href="sales.html"><i class="fas fa-handshake"></i> المبيعات</a></li>
+                <li><a href="inventory.html" class="active"><i class="fas fa-boxes"></i> المخزون</a></li>
+                <li><a href="client.html"><i class="fas fa-users"></i> العملاء</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-alt"></i> التقارير</a></li>
+                <li><a href="network.html"><i class="fas fa-network-wired"></i> الشبكة</a></li>
+                <li><a href="filters.html"><i class="fas fa-filter"></i> المرشحات</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inventory page specific functions
+        function showUploadModal() {
+            showNotification('فتح نافذة رفع المخزون...', 'info');
+        }
+
+        function showProjectDetails() {
+            showNotification('عرض تفاصيل المشروع الأساسي...', 'info');
+        }
+
+        function showResaleUnits() {
+            showNotification('عرض وحدات إعادة البيع...', 'info');
+        }
+
+        function showInventoryLogs() {
+            showNotification('عرض سجلات المخزون...', 'info');
+        }
+
+        // Add hover effects to inventory cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const inventoryCards = document.querySelectorAll('.inventory-card');
+            inventoryCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
+                });
+            });
+
+            // Add hover effects to activity items
+            const activityItems = document.querySelectorAll('.activity-item');
+            activityItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.background = '#f8f9fa';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.background = 'transparent';
+                });
+            });
+
+            // Add hover effects to navigation links
+            const navLinks = document.querySelectorAll('.nav-link:not(.active-nav)');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.background = '#667eea';
+                    this.style.color = 'white';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.background = '#f8f9fa';
+                    this.style.color = '#333';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
