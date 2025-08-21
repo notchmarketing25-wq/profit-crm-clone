@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice CRM - التسويق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard active">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="dashboard-logo">
+                    <div class="vice-logo">
+                        Vice
+                        <span class="crm-badge">CRM</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                    <a href="marketing.html" class="nav-item dropdown active">التسويق</a>
+                    <a href="sales.html" class="nav-item dropdown">المبيعات</a>
+                    <a href="inventory.html" class="nav-item dropdown">المخزون</a>
+                    <a href="client.html" class="nav-item">العملاء</a>
+                    <a href="reports.html" class="nav-item dropdown">التقارير</a>
+                    <a href="network.html" class="nav-item dropdown">الشبكة</a>
+                    <a href="#" class="nav-item dropdown">المرشحات</a>
+                </nav>
+                
+                <div class="user-section">
+                    <div class="user-actions">
+                        <button class="action-btn" title="البحث">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="الإشعارات">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-btn" title="الرسائل">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        <button class="action-btn" title="المهام">
+                            <i class="fas fa-tasks"></i>
+                        </button>
+                        <button class="action-btn" title="التحميل">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <span>مرحباً، محمود</span>
+                        <div class="user-avatar">م</div>
+                        <button class="action-btn" title="الإعدادات">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-chart-line"></i>
+                            لوحة التحكم
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketing.html" class="active">
+                            <i class="fas fa-bullhorn"></i>
+                            التسويق
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="fas fa-handshake"></i>
+                            المبيعات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            المخزون
+                        </a>
+                    </li>
+                    <li>
+                        <a href="client.html">
+                            <i class="fas fa-users"></i>
+                            العملاء
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-file-alt"></i>
+                            التقارير
+                        </a>
+                    </li>
+                    <li>
+                        <a href="network.html">
+                            <i class="fas fa-network-wired"></i>
+                            الشبكة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="filters.html">
+                            <i class="fas fa-filter"></i>
+                            المرشحات
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="dashboard.html">لوحة التحكم</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>التسويق</span>
+                    </div>
+                    <h1 class="page-title">إدارة التسويق</h1>
+                </div>
+
+                <!-- Marketing Dashboard -->
+                <div class="marketing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <!-- Campaigns Card -->
+                    <div class="marketing-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">الحملات التسويقية</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">إدارة وتتبع الحملات</p>
+                            </div>
+                        </div>
+                        <div class="card-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #667eea;">12</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">حملات نشطة</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #28a745;">8</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">مكتملة</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-plus"></i>
+                            إنشاء حملة جديدة
+                        </button>
+                    </div>
+
+                    <!-- Leads Sources Card -->
+                    <div class="marketing-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">مصادر العملاء</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">تحليل مصادر الحصول على العملاء</p>
+                            </div>
+                        </div>
+                        <div class="sources-list" style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>وسائل التواصل الاجتماعي</span>
+                                <span style="font-weight: 600;">45%</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>الإعلانات المدفوعة</span>
+                                <span style="font-weight: 600;">30%</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>الإحالات</span>
+                                <span style="font-weight: 600;">25%</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" style="width: 100%;">
+                            <i class="fas fa-chart-pie"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+
+                    <!-- Email Marketing Card -->
+                    <div class="marketing-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">التسويق عبر البريد الإلكتروني</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">إدارة حملات البريد الإلكتروني</p>
+                            </div>
+                        </div>
+                        <div class="email-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #17a2b8;">1,250</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">مرسلة</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #28a745;">85%</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">معدل الفتح</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال حملة جديدة
+                        </button>
+                    </div>
+
+                    <!-- Social Media Card -->
+                    <div class="marketing-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">وسائل التواصل الاجتماعي</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">إدارة المحتوى والتفاعل</p>
+                            </div>
+                        </div>
+                        <div class="social-platforms" style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <i class="fab fa-facebook" style="font-size: 1.5rem; color: #1877f2; margin-bottom: 5px;"></i>
+                                <div style="font-size: 0.8rem; color: #6c757d;">فيسبوك</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <i class="fab fa-instagram" style="font-size: 1.5rem; color: #e4405f; margin-bottom: 5px;"></i>
+                                <div style="font-size: 0.8rem; color: #6c757d;">إنستغرام</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <i class="fab fa-twitter" style="font-size: 1.5rem; color: #1da1f2; margin-bottom: 5px;"></i>
+                                <div style="font-size: 0.8rem; color: #6c757d;">تويتر</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <i class="fas fa-calendar-plus"></i>
+                            جدولة منشور
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Marketing Activity -->
+                <div class="recent-marketing-activity" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 25px;">
+                        <i class="fas fa-chart-line"></i>
+                        النشاط التسويقي الأخير
+                    </h3>
+                    
+                    <div class="activity-timeline">
+                        <div class="timeline-item" style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0;">
+                            <div class="timeline-icon" style="width: 40px; height: 40px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-bullhorn" style="color: #1976d2;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تم إطلاق حملة إعلانية جديدة</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">حملة "عروض الصيف" على فيسبوك وإنستغرام</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">منذ ساعة واحدة</div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0;">
+                            <div class="timeline-icon" style="width: 40px; height: 40px; background: #f3e5f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-envelope" style="color: #7b1fa2;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تم إرسال نشرة إخبارية</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">إرسال إلى 1,250 مشترك - معدل فتح 85%</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">منذ 3 ساعات</div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" style="display: flex; align-items: center; padding: 15px;">
+                            <div class="timeline-icon" style="width: 40px; height: 40px; background: #d4edda; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 15px;">
+                                <i class="fas fa-chart-bar" style="color: #155724;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #333;">تقرير أداء شهري</div>
+                                <div style="font-size: 0.9rem; color: #6c757d;">زيادة 25% في العملاء المحتملين مقارنة بالشهر الماضي</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">أمس</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="vice-logo">
+                    Vice
+                    <span class="crm-badge">CRM</span>
+                </div>
+                <button class="close-sidebar" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a></li>
+                <li><a href="marketing.html" class="active"><i class="fas fa-bullhorn"></i> التسويق</a></li>
+                <li><a href="sales.html"><i class="fas fa-handshake"></i> المبيعات</a></li>
+                <li><a href="inventory.html"><i class="fas fa-boxes"></i> المخزون</a></li>
+                <li><a href="client.html"><i class="fas fa-users"></i> العملاء</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-alt"></i> التقارير</a></li>
+                <li><a href="network.html"><i class="fas fa-network-wired"></i> الشبكة</a></li>
+                <li><a href="filters.html"><i class="fas fa-filter"></i> المرشحات</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
