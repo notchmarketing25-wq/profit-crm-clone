@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice CRM - إدارة العملاء</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard active">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="dashboard-logo">
+                    <div class="vice-logo">
+                        Vice
+                        <span class="crm-badge">CRM</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                    <a href="marketing.html" class="nav-item dropdown">التسويق</a>
+                    <a href="sales.html" class="nav-item dropdown active">المبيعات</a>
+                    <a href="inventory.html" class="nav-item dropdown">المخزون</a>
+                    <a href="client.html" class="nav-item">العملاء</a>
+                    <a href="reports.html" class="nav-item dropdown">التقارير</a>
+                    <a href="network.html" class="nav-item dropdown">الشبكة</a>
+                    <a href="#" class="nav-item dropdown">المرشحات</a>
+                </nav>
+                
+                <div class="user-section">
+                    <div class="user-actions">
+                        <button class="action-btn" title="البحث">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="الإشعارات">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-btn" title="الرسائل">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        <button class="action-btn" title="المهام">
+                            <i class="fas fa-tasks"></i>
+                        </button>
+                        <button class="action-btn" title="التحميل">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <span>مرحباً، محمود</span>
+                        <div class="user-avatar">م</div>
+                        <button class="action-btn" title="الإعدادات">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-chart-line"></i>
+                            لوحة التحكم
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketing.html">
+                            <i class="fas fa-bullhorn"></i>
+                            التسويق
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html" class="active">
+                            <i class="fas fa-handshake"></i>
+                            المبيعات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            المخزون
+                        </a>
+                    </li>
+                    <li>
+                        <a href="client.html">
+                            <i class="fas fa-users"></i>
+                            العملاء
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-file-alt"></i>
+                            التقارير
+                        </a>
+                    </li>
+                    <li>
+                        <a href="network.html">
+                            <i class="fas fa-network-wired"></i>
+                            الشبكة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="filters.html">
+                            <i class="fas fa-filter"></i>
+                            المرشحات
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="dashboard.html">المبيعات</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="sales.html">رسوم المبيعات</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>المبيعات</span>
+                    </div>
+                    <h1 class="page-title">جميع العملاء</h1>
+                    <div class="page-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-list"></i>
+                            إجراء مجمع
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            حذف مجمع
+                        </button>
+                        <button class="btn filter-btn">
+                            <i class="fas fa-sort"></i>
+                            ترتيب حسب
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leads Table -->
+                <div class="leads-table">
+                    <div class="table-header">
+                        <div class="search-box">
+                            <input type="text" placeholder="بحث" id="leadsSearch">
+                            <div class="leads-count">
+                                <span class="btn btn-primary">العملاء 744</span>
+                                <button class="btn btn-secondary">تصدير</button>
+                            </div>
+                        </div>
+                        <button class="btn filter-btn">
+                            <i class="fas fa-filter"></i>
+                            مرشح
+                        </button>
+                    </div>
+                    
+                    <div class="table-content">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="selectAll">
+                                    </th>
+                                    <th>الاسم</th>
+                                    <th>المكتب</th>
+                                    <th>المسؤول عنه</th>
+                                    <th>تاريخ التعيين</th>
+                                    <th>المنشئ</th>
+                                    <th>الحالة</th>
+                                    <th>آخر إجراء</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <tr>
+                                    <td><input type="checkbox" class="lead-checkbox"></td>
+                                    <td>
+                                        <div class="lead-info">
+                                            <strong>أستاذة منيرة</strong>
+                                            <div class="lead-details">
+                                                <small>201001003448</small><br>
+                                                <small>N/A</small><br>
+                                                <i class="fas fa-home"></i> وحدة سكنية
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-building"></i>
+                                        المكتب الرئيسي
+                                    </td>
+                                    <td>
+                                        <div class="assigned-to">
+                                            <strong>المسؤول عنه:</strong> ياسر السعيد<br>
+                                            <strong>تاريخ التعيين:</strong> 19-أغسطس-2025<br>
+                                            <strong>الحالة:</strong> <span class="status-badge status-fresh">جديد</span>
+                                        </div>
+                                    </td>
+                                    <td>19-أغسطس-2025</td>
+                                    <td>
+                                        <strong>المنشئ:</strong> داليا
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-fresh">جديد</span>
+                                    </td>
+                                    <td>
+                                        <div class="last-action">
+                                            <strong>آخر إجراء</strong> N/A<br>
+                                            <small>تم التعيين - حالة جديدة--</small><br>
+                                            <small>تم الإنشاء بواسطة -- داليا</small><br>
+                                            <small>في : 2025-08-19 11:15:16</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-actions">
+                                            <button class="action-icon action-edit" title="تعديل">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="action-icon action-view" title="عرض">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-icon action-delete" title="حذف">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="contact-actions">
+                                            <button class="action-icon" title="مرفق">
+                                                <i class="fas fa-paperclip"></i>
+                                            </button>
+                                            <button class="action-icon" title="نسخ">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button class="action-icon" title="موقع">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </button>
+                                            <button class="action-icon" title="تحميل">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="action-icon" title="واتساب">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                            <button class="action-icon" title="بريد إلكتروني">
+                                                <i class="fas fa-envelope"></i>
+                                            </button>
+                                            <button class="action-icon" title="رسالة">
+                                                <i class="fas fa-sms"></i>
+                                            </button>
+                                            <button class="action-icon" title="ملاحظات">
+                                                <i class="fas fa-sticky-note"></i>
+                                            </button>
+                                            <button class="action-icon" title="مهام">
+                                                <i class="fas fa-tasks"></i>
+                                            </button>
+                                            <button class="action-icon" title="مشاركة">
+                                                <i class="fas fa-share"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="lead-checkbox"></td>
+                                    <td>
+                                        <div class="lead-info">
+                                            <strong>بدون اسم</strong>
+                                            <div class="lead-details">
+                                                <small>201033878951</small><br>
+                                                <small>N/A</small><br>
+                                                <i class="fas fa-building"></i> وحدة تجارية
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-building"></i>
+                                        المكتب الرئيسي
+                                    </td>
+                                    <td>
+                                        <div class="assigned-to">
+                                            <strong>المسؤول عنه:</strong> هبة محمد<br>
+                                            <strong>تاريخ التعيين:</strong> 18-أغسطس-2025<br>
+                                            <strong>الحالة:</strong> <span class="status-badge status-processing">متابعة</span>
+                                        </div>
+                                    </td>
+                                    <td>18-أغسطس-2025</td>
+                                    <td>
+                                        <strong>المنشئ:</strong> هبة محمد
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-processing">متابعة</span>
+                                    </td>
+                                    <td>
+                                        <div class="last-action">
+                                            <strong>آخر إجراء</strong> N/A<br>
+                                            <small>تم التعيين - حالة متابعة--</small><br>
+                                            <small>تم الإنشاء بواسطة -- هبة محمد</small><br>
+                                            <small>في : 2025-08-18 10:30:22</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-actions">
+                                            <button class="action-icon action-edit" title="تعديل">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="action-icon action-view" title="عرض">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-icon action-delete" title="حذف">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="contact-actions">
+                                            <button class="action-icon" title="مرفق">
+                                                <i class="fas fa-paperclip"></i>
+                                            </button>
+                                            <button class="action-icon" title="نسخ">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button class="action-icon" title="موقع">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </button>
+                                            <button class="action-icon" title="تحميل">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="action-icon" title="واتساب">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                            <button class="action-icon" title="بريد إلكتروني">
+                                                <i class="fas fa-envelope"></i>
+                                            </button>
+                                            <button class="action-icon" title="رسالة">
+                                                <i class="fas fa-sms"></i>
+                                            </button>
+                                            <button class="action-icon" title="ملاحظات">
+                                                <i class="fas fa-sticky-note"></i>
+                                            </button>
+                                            <button class="action-icon" title="مهام">
+                                                <i class="fas fa-tasks"></i>
+                                            </button>
+                                            <button class="action-icon" title="مشاركة">
+                                                <i class="fas fa-share"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-section" style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                    <button class="btn filter-btn">السابق</button>
+                    <span style="padding: 10px 15px; background: #667eea; color: white; border-radius: 6px;">1</span>
+                    <button class="btn filter-btn">2</button>
+                    <button class="btn filter-btn">3</button>
+                    <button class="btn filter-btn">التالي</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="vice-logo">
+                    Vice
+                    <span class="crm-badge">CRM</span>
+                </div>
+                <button class="close-sidebar" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a></li>
+                <li><a href="marketing.html"><i class="fas fa-bullhorn"></i> التسويق</a></li>
+                <li><a href="sales.html" class="active"><i class="fas fa-handshake"></i> المبيعات</a></li>
+                <li><a href="inventory.html"><i class="fas fa-boxes"></i> المخزون</a></li>
+                <li><a href="client.html"><i class="fas fa-users"></i> العملاء</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-alt"></i> التقارير</a></li>
+                <li><a href="network.html"><i class="fas fa-network-wired"></i> الشبكة</a></li>
+                <li><a href="filters.html"><i class="fas fa-filter"></i> المرشحات</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize leads page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLeadsPage();
+        });
+
+        function initializeLeadsPage() {
+            // Initialize search
+            const searchInput = document.getElementById('leadsSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterLeads);
+            }
+
+            // Initialize select all checkbox
+            const selectAllCheckbox = document.getElementById('selectAll');
+            if (selectAllCheckbox) {
+                selectAllCheckbox.addEventListener('change', toggleAllLeads);
+            }
+
+            // Initialize individual checkboxes
+            const leadCheckboxes = document.querySelectorAll('.lead-checkbox');
+            leadCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateSelectAllState);
+            });
+
+            // Initialize action buttons
+            initializeActionButtons();
+        }
+
+        function filterLeads() {
+            const searchTerm = document.getElementById('leadsSearch').value.toLowerCase();
+            const tableRows = document.querySelectorAll('#leadsTableBody tr');
+
+            tableRows.forEach(row => {
+                const leadName = row.querySelector('.lead-info strong').textContent.toLowerCase();
+                const leadPhone = row.querySelector('.lead-details small').textContent.toLowerCase();
+                
+                if (leadName.includes(searchTerm) || leadPhone.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleAllLeads() {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const leadCheckboxes = document.querySelectorAll('.lead-checkbox');
+            
+            leadCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        }
+
+        function updateSelectAllState() {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const leadCheckboxes = document.querySelectorAll('.lead-checkbox');
+            const checkedBoxes = document.querySelectorAll('.lead-checkbox:checked');
+            
+            if (checkedBoxes.length === leadCheckboxes.length) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else if (checkedBoxes.length > 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            }
+        }
+
+        function initializeActionButtons() {
+            // Edit buttons
+            const editButtons = document.querySelectorAll('.action-edit');
+            editButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    showNotification('فتح نافذة التعديل...', 'info');
+                });
+            });
+
+            // View buttons
+            const viewButtons = document.querySelectorAll('.action-view');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    showNotification('عرض تفاصيل العميل...', 'info');
+                });
+            });
+
+            // Delete buttons
+            const deleteButtons = document.querySelectorAll('.action-delete');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm('هل أنت متأكد من حذف هذا العميل؟')) {
+                        showNotification('تم حذف العميل بنجاح', 'success');
+                        // Remove row from table
+                        button.closest('tr').remove();
+                    }
+                });
+            });
+
+            // Contact action buttons
+            const whatsappButtons = document.querySelectorAll('.contact-actions .action-icon[title="واتساب"]');
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    showNotification('فتح واتساب...', 'success');
+                });
+            });
+
+            const emailButtons = document.querySelectorAll('.contact-actions .action-icon[title="بريد إلكتروني"]');
+            emailButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    showNotification('فتح البريد الإلكتروني...', 'info');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
