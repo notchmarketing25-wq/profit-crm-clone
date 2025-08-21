@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice CRM - التقارير</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard active">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="dashboard-logo">
+                    <div class="vice-logo">
+                        Vice
+                        <span class="crm-badge">CRM</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                    <a href="marketing.html" class="nav-item dropdown">التسويق</a>
+                    <a href="sales.html" class="nav-item dropdown">المبيعات</a>
+                    <a href="inventory.html" class="nav-item dropdown">المخزون</a>
+                    <a href="client.html" class="nav-item">العملاء</a>
+                    <a href="reports.html" class="nav-item dropdown active">التقارير</a>
+                    <a href="network.html" class="nav-item dropdown">الشبكة</a>
+                    <a href="#" class="nav-item dropdown">المرشحات</a>
+                </nav>
+                
+                <div class="user-section">
+                    <div class="user-actions">
+                        <button class="action-btn" title="البحث">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="الإشعارات">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-btn" title="الرسائل">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        <button class="action-btn" title="المهام">
+                            <i class="fas fa-tasks"></i>
+                        </button>
+                        <button class="action-btn" title="التحميل">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <span>مرحباً، محمود</span>
+                        <div class="user-avatar">م</div>
+                        <button class="action-btn" title="الإعدادات">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-chart-line"></i>
+                            لوحة التحكم
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketing.html">
+                            <i class="fas fa-bullhorn"></i>
+                            التسويق
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="fas fa-handshake"></i>
+                            المبيعات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            المخزون
+                        </a>
+                    </li>
+                    <li>
+                        <a href="client.html">
+                            <i class="fas fa-users"></i>
+                            العملاء
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="active">
+                            <i class="fas fa-file-alt"></i>
+                            التقارير
+                        </a>
+                    </li>
+                    <li>
+                        <a href="network.html">
+                            <i class="fas fa-network-wired"></i>
+                            الشبكة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="filters.html">
+                            <i class="fas fa-filter"></i>
+                            المرشحات
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="dashboard.html">لوحة التحكم</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>التقارير</span>
+                    </div>
+                    <h1 class="page-title">التقارير والإحصائيات</h1>
+                    <div class="page-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            إنشاء تقرير جديد
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            تصدير التقارير
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reports Dashboard -->
+                <div class="reports-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <!-- Sales Reports -->
+                    <div class="report-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">تقارير المبيعات</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">تحليل أداء المبيعات والعمولات</p>
+                            </div>
+                        </div>
+                        <div class="report-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #28a745;">2.5M</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">إجمالي المبيعات</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #17a2b8;">156</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">صفقات مغلقة</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-eye"></i>
+                            عرض التقرير
+                        </button>
+                    </div>
+
+                    <!-- Marketing Reports -->
+                    <div class="report-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">تقارير التسويق</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">أداء الحملات ومصادر العملاء</p>
+                            </div>
+                        </div>
+                        <div class="report-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #ffc107;">12</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">حملات نشطة</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #dc3545;">85%</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">معدل التحويل</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" style="width: 100%;">
+                            <i class="fas fa-eye"></i>
+                            عرض التقرير
+                        </button>
+                    </div>
+
+                    <!-- Client Reports -->
+                    <div class="report-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">تقارير العملاء</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">تحليل سلوك العملاء والاحتفاظ</p>
+                            </div>
+                        </div>
+                        <div class="report-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #6f42c1;">744</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">إجمالي العملاء</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #20c997;">92%</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">معدل الرضا</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning" style="width: 100%;">
+                            <i class="fas fa-eye"></i>
+                            عرض التقرير
+                        </button>
+                    </div>
+
+                    <!-- Financial Reports -->
+                    <div class="report-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;">
+                        <div class="card-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div class="card-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; font-weight: 600; color: #333;">التقارير المالية</h3>
+                                <p style="color: #6c757d; font-size: 0.9rem;">الإيرادات والأرباح والمصروفات</p>
+                            </div>
+                        </div>
+                        <div class="report-stats" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #28a745;">450K</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">صافي الربح</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #fd7e14;">18%</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">هامش الربح</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <i class="fas fa-eye"></i>
+                            عرض التقرير
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Reports -->
+                <div class="recent-reports-section" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 25px;">
+                        <i class="fas fa-history"></i>
+                        التقارير الأخيرة
+                    </h3>
+                    
+                    <div class="reports-table" style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #f8f9fa;">
+                                    <th style="padding: 15px; text-align: right; border-bottom: 1px solid #dee2e6; font-weight: 600;">اسم التقرير</th>
+                                    <th style="padding: 15px; text-align: right; border-bottom: 1px solid #dee2e6; font-weight: 600;">النوع</th>
+                                    <th style="padding: 15px; text-align: right; border-bottom: 1px solid #dee2e6; font-weight: 600;">تاريخ الإنشاء</th>
+                                    <th style="padding: 15px; text-align: right; border-bottom: 1px solid #dee2e6; font-weight: 600;">الحالة</th>
+                                    <th style="padding: 15px; text-align: right; border-bottom: 1px solid #dee2e6; font-weight: 600;">الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #f0f0f0;">
+                                    <td style="padding: 15px;">تقرير المبيعات الشهري - أغسطس 2025</td>
+                                    <td style="padding: 15px;"><span style="background: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">مبيعات</span></td>
+                                    <td style="padding: 15px;">19-أغسطس-2025</td>
+                                    <td style="padding: 15px;"><span style="background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">مكتمل</span></td>
+                                    <td style="padding: 15px;">
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #e3f2fd; color: #1976d2; cursor: pointer; margin-left: 5px;">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #f3e5f5; color: #7b1fa2; cursor: pointer;">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #f0f0f0;">
+                                    <td style="padding: 15px;">تحليل أداء الحملات التسويقية</td>
+                                    <td style="padding: 15px;"><span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">تسويق</span></td>
+                                    <td style="padding: 15px;">18-أغسطس-2025</td>
+                                    <td style="padding: 15px;"><span style="background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">قيد المعالجة</span></td>
+                                    <td style="padding: 15px;">
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #e3f2fd; color: #1976d2; cursor: pointer; margin-left: 5px;">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #f3e5f5; color: #7b1fa2; cursor: pointer;">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px;">تقرير رضا العملاء - الربع الثالث</td>
+                                    <td style="padding: 15px;"><span style="background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">عملاء</span></td>
+                                    <td style="padding: 15px;">17-أغسطس-2025</td>
+                                    <td style="padding: 15px;"><span style="background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">مكتمل</span></td>
+                                    <td style="padding: 15px;">
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #e3f2fd; color: #1976d2; cursor: pointer; margin-left: 5px;">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-icon" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: #f3e5f5; color: #7b1fa2; cursor: pointer;">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Analytics -->
+                <div class="quick-analytics" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 25px;">
+                        <i class="fas fa-chart-pie"></i>
+                        تحليلات سريعة
+                    </h3>
+                    
+                    <div class="analytics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div class="analytics-item" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #667eea; margin-bottom: 10px;">25%</div>
+                            <div style="color: #6c757d;">نمو المبيعات</div>
+                            <div style="font-size: 0.8rem; color: #28a745; margin-top: 5px;">
+                                <i class="fas fa-arrow-up"></i> مقارنة بالشهر الماضي
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-item" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #28a745; margin-bottom: 10px;">156</div>
+                            <div style="color: #6c757d;">عملاء جدد</div>
+                            <div style="font-size: 0.8rem; color: #28a745; margin-top: 5px;">
+                                <i class="fas fa-arrow-up"></i> هذا الشهر
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-item" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #ffc107; margin-bottom: 10px;">92%</div>
+                            <div style="color: #6c757d;">معدل الرضا</div>
+                            <div style="font-size: 0.8rem; color: #28a745; margin-top: 5px;">
+                                <i class="fas fa-arrow-up"></i> تحسن 5%
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-item" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #dc3545; margin-bottom: 10px;">18%</div>
+                            <div style="color: #6c757d;">هامش الربح</div>
+                            <div style="font-size: 0.8rem; color: #28a745; margin-top: 5px;">
+                                <i class="fas fa-arrow-up"></i> زيادة 3%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="vice-logo">
+                    Vice
+                    <span class="crm-badge">CRM</span>
+                </div>
+                <button class="close-sidebar" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a></li>
+                <li><a href="marketing.html"><i class="fas fa-bullhorn"></i> التسويق</a></li>
+                <li><a href="sales.html"><i class="fas fa-handshake"></i> المبيعات</a></li>
+                <li><a href="inventory.html"><i class="fas fa-boxes"></i> المخزون</a></li>
+                <li><a href="client.html"><i class="fas fa-users"></i> العملاء</a></li>
+                <li><a href="reports.html" class="active"><i class="fas fa-file-alt"></i> التقارير</a></li>
+                <li><a href="network.html"><i class="fas fa-network-wired"></i> الشبكة</a></li>
+                <li><a href="filters.html"><i class="fas fa-filter"></i> المرشحات</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
