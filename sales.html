@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice CRM - المبيعات</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard active">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="dashboard-logo">
+                    <div class="vice-logo">
+                        Vice
+                        <span class="crm-badge">CRM</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                    <a href="marketing.html" class="nav-item dropdown">التسويق</a>
+                    <a href="sales.html" class="nav-item dropdown active">المبيعات</a>
+                    <a href="inventory.html" class="nav-item dropdown">المخزون</a>
+                    <a href="client.html" class="nav-item">العملاء</a>
+                    <a href="reports.html" class="nav-item dropdown">التقارير</a>
+                    <a href="network.html" class="nav-item dropdown">الشبكة</a>
+                    <a href="#" class="nav-item dropdown">المرشحات</a>
+                </nav>
+                
+                <div class="user-section">
+                    <div class="user-actions">
+                        <button class="action-btn" title="البحث">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="الإشعارات">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="action-btn" title="الرسائل">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                        <button class="action-btn" title="المهام">
+                            <i class="fas fa-tasks"></i>
+                        </button>
+                        <button class="action-btn" title="التحميل">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <span>مرحباً، محمود</span>
+                        <div class="user-avatar">م</div>
+                        <button class="action-btn" title="الإعدادات">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-chart-line"></i>
+                            لوحة التحكم
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketing.html">
+                            <i class="fas fa-bullhorn"></i>
+                            التسويق
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html" class="active">
+                            <i class="fas fa-handshake"></i>
+                            المبيعات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inventory.html">
+                            <i class="fas fa-boxes"></i>
+                            المخزون
+                        </a>
+                    </li>
+                    <li>
+                        <a href="client.html">
+                            <i class="fas fa-users"></i>
+                            العملاء
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-file-alt"></i>
+                            التقارير
+                        </a>
+                    </li>
+                    <li>
+                        <a href="network.html">
+                            <i class="fas fa-network-wired"></i>
+                            الشبكة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="filters.html">
+                            <i class="fas fa-filter"></i>
+                            المرشحات
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="page-header">
+                    <div class="breadcrumb">
+                        <a href="dashboard.html">مجموعات المبيعات</a>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>مجموعات المبيعات</span>
+                    </div>
+                    <h1 class="page-title">مجموعات المبيعات</h1>
+                    <div class="page-actions">
+                        <button class="btn filter-btn">
+                            <i class="fas fa-filter"></i>
+                            مرشح
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sales Groups Navigation -->
+                <div class="sales-nav-section" style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <div class="sales-nav-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3>إدارة العملاء المحتملين</h3>
+                        <div class="nav-actions">
+                            <button class="btn btn-primary" onclick="window.location.href='add-lead.html'">
+                                <i class="fas fa-user-plus"></i>
+                                إضافة عميل جديد
+                            </button>
+                            <button class="btn btn-secondary" onclick="window.location.href='upload-leads.html'">
+                                <i class="fas fa-upload"></i>
+                                رفع عملاء جدد
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sales-nav-menu" style="display: flex; flex-wrap: wrap; gap: 15px;">
+                        <a href="leads.html" class="nav-link" style="padding: 10px 20px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-star"></i>
+                            عملاء جدد
+                        </a>
+                        <a href="leads.html" class="nav-link" style="padding: 10px 20px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-list"></i>
+                            جميع العملاء
+                        </a>
+                        <a href="leads.html" class="nav-link" style="padding: 10px 20px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-copy"></i>
+                            عملاء مكررة
+                        </a>
+                        <a href="leads.html" class="nav-link" style="padding: 10px 20px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-user-times"></i>
+                            عملاء منسحبة
+                        </a>
+                        <a href="leads.html" class="nav-link" style="padding: 10px 20px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">
+                            <i class="fas fa-filter"></i>
+                            مرشح إجراءات العملاء
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sales Groups Grid -->
+                <div class="sales-groups-grid">
+                    <!-- New Leads -->
+                    <div class="group-card" onclick="navigateToLeads('new-leads')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon new-leads">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>عملاء جدد</h3>
+                                <div class="group-count">العملاء: 22</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- My Fresh Leads -->
+                    <div class="group-card" onclick="navigateToLeads('fresh-leads')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon fresh-leads">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>عملائي الجدد</h3>
+                                <div class="group-count">العملاء: 5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Follow Up -->
+                    <div class="group-card" onclick="navigateToLeads('follow-up')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon follow-up">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>متابعة</h3>
+                                <div class="group-count">العملاء: 151</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing -->
+                    <div class="group-card" onclick="navigateToLeads('processing')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon processing">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>معالجة</h3>
+                                <div class="group-count">العملاء: 34</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Follow Up After Processing -->
+                    <div class="group-card" onclick="navigateToLeads('follow-up-processing')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon follow-up">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>متابعة بعد المعالجة</h3>
+                                <div class="group-count">العملاء: 18</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meeting -->
+                    <div class="group-card" onclick="navigateToLeads('meeting')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon meeting">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>اجتماع</h3>
+                                <div class="group-count">العملاء: 0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Follow Up After Product -->
+                    <div class="group-card" onclick="navigateToLeads('follow-up-product')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon processing">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>متابعة بعد المنتج</h3>
+                                <div class="group-count">العملاء: 7</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reserved or Offered -->
+                    <div class="group-card" onclick="navigateToLeads('reserved')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon processing">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>حجز أو عرضون</h3>
+                                <div class="group-count">العملاء: 0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pending -->
+                    <div class="group-card" onclick="navigateToLeads('pending')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon pending">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>معلق</h3>
+                                <div class="group-count">العملاء: 6</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unreachable -->
+                    <div class="group-card" onclick="navigateToLeads('unreachable')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon unreachable">
+                                <i class="fas fa-phone-slash"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>لا يمكن الوصول</h3>
+                                <div class="group-count">العملاء: 205</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canceled -->
+                    <div class="group-card" onclick="navigateToLeads('canceled')">
+                        <button class="group-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="group-card-header">
+                            <div class="group-icon canceled">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div class="group-info">
+                                <h3>ملغي</h3>
+                                <div class="group-count">العملاء: 275</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Panel -->
+                <div class="quick-panel" style="position: fixed; top: 50%; right: 20px; transform: translateY(-50%); background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); z-index: 100;">
+                    <div style="text-align: center; margin-bottom: 15px; font-weight: 600; color: #333;">لوحة سريعة</div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <button class="action-btn" title="إضافة عميل" style="width: 40px; height: 40px;">
+                            <i class="fas fa-user-plus" style="color: #28a745;"></i>
+                        </button>
+                        <button class="action-btn" title="المهام" style="width: 40px; height: 40px;">
+                            <i class="fas fa-tasks" style="color: #17a2b8;"></i>
+                        </button>
+                        <button class="action-btn" title="التقويم" style="width: 40px; height: 40px;">
+                            <i class="fas fa-calendar" style="color: #ffc107;"></i>
+                        </button>
+                        <button class="action-btn" title="الملاحظات" style="width: 40px; height: 40px;">
+                            <i class="fas fa-sticky-note" style="color: #fd7e14;"></i>
+                        </button>
+                        <button class="action-btn" title="التقارير" style="width: 40px; height: 40px;">
+                            <i class="fas fa-chart-bar" style="color: #6f42c1;"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="vice-logo">
+                    Vice
+                    <span class="crm-badge">CRM</span>
+                </div>
+                <button class="close-sidebar" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a></li>
+                <li><a href="marketing.html"><i class="fas fa-bullhorn"></i> التسويق</a></li>
+                <li><a href="sales.html" class="active"><i class="fas fa-handshake"></i> المبيعات</a></li>
+                <li><a href="inventory.html"><i class="fas fa-boxes"></i> المخزون</a></li>
+                <li><a href="client.html"><i class="fas fa-users"></i> العملاء</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-alt"></i> التقارير</a></li>
+                <li><a href="network.html"><i class="fas fa-network-wired"></i> الشبكة</a></li>
+                <li><a href="filters.html"><i class="fas fa-filter"></i> المرشحات</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Add hover effects to navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.background = '#667eea';
+                    this.style.color = 'white';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.background = '#f8f9fa';
+                    this.style.color = '#333';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
